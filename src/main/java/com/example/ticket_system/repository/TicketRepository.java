@@ -8,5 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface TicketRepository extends JpaRepository<Ticket, Long>, JpaSpecificationExecutor<Ticket> {
+
     List<Ticket> findAllByStatusAndCreatedAtBefore(String status, LocalDateTime dateTime);
+
 }

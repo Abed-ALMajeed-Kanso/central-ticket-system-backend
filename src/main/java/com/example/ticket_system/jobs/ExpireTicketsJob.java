@@ -22,7 +22,6 @@ public class ExpireTicketsJob implements Job {
     public void execute(JobExecutionContext context) throws JobExecutionException {
         LocalDateTime oneWeekAgo = LocalDateTime.now().minusWeeks(1);
         // LocalDateTime oneMinuteAgo = LocalDateTime.now().minusMinutes(1);
-
         List<Ticket> ticketsToExpire = ticketRepository.findAllByStatusAndCreatedAtBefore(
                 "pending",
                 oneWeekAgo
