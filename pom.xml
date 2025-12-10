@@ -147,7 +147,7 @@
                     <excludes>
                         <exclude>
                             <groupId>org.project.lombok</groupId>
-                            <artificad>lombok</artificad>
+                            <artifactId>lombok</artifactId>
                             <version>1.18.42</version>
                         </exclude>
                     </excludes>
