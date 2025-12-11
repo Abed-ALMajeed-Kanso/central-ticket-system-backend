@@ -3,38 +3,38 @@ Centralized Ticket System: Developed a centralized ticket system designed to int
 
 Key Features & Functionality:
 
-•	Real-time ticket handling: Implemented using WebSockets and integrated with Slack via Webhooks
+- Real-time ticket handling: Implemented using WebSockets and integrated with Slack via Webhooks
 
-•	Backend Deployment: Hosted on AWS EC2 (Linux Red Hat) and connected to AWS RDS, with CLI-based SSH management. Ticket attachments are securely stored in AWS S3, and Cloudflare is used for secured backend connections.
+Backend Deployment: Hosted on AWS EC2 (Linux Red Hat) and connected to AWS RDS, with CLI-based SSH management. Ticket attachments are securely stored in AWS S3, and Cloudflare is used for secured backend connections.
 
-•	Frontend Deployment: Deployed on Vercel, providing a fast and responsive user interface.
+-	Frontend Deployment: Deployed on Vercel, providing a fast and responsive user interface.
 
-•	Authentication & Security:
+-	Authentication & Security:
 
-  o	Spring Security with cookie-based authentication 
+  - Spring Security with cookie-based authentication 
   
-  o	Generation of access and refresh tokens, with check-auth and refresh-auth mechanisms
+  -	Generation of access and refresh tokens, with check-auth and refresh-auth mechanisms
   
-  o	Rate limiting implemented with Bucket4j
+  -	Rate limiting implemented with Bucket4j
   
-  o	Role-Based Access Control (RBAC)
+  -	Role-Based Access Control (RBAC)
   
-•	Frontend Enhancements:
+-	Frontend Enhancements:
 
-  o	TenStack for managing the users table
+  -	TenStack for managing the users table
   
-  o	Formik for form validation
+  -	Formik for form validation
   
-  o	Pagination, sorting, and filtering supported on both frontend and backend
+  -	Pagination, sorting, and filtering supported on both frontend and backend
 
-•	Task Automation & Maintenance:
+-	Task Automation & Maintenance:
 
-  o	Quartz Scheduler marks tickets unseen for more than a week as urgent
+  -	Quartz Scheduler marks tickets unseen for more than a week as urgent
   
-  o	Auditing applied to users
+  -	Auditing applied to users
   
-  o	Orphan delete rules enforced across entity hierarchies: users → tickets → messages → attachments
+  -	Orphan delete rules enforced across entity hierarchies: users → tickets → messages → attachments
   
-  o	Transactional methods ensure database integrity during complex operations
+  -	Transactional methods ensure database integrity during complex operations
 
-•	Project Setup: Provided in each repository separately (with details in the backend repository).
+-	Project Setup: Provided in SETUP.MD.
