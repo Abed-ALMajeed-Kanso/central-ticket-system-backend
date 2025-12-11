@@ -36,4 +36,4 @@ Key Features & Functionality:
   
   - Transactional methods ensure database integrity during complex operations
 
-- Project Setup: Provided in SETUP.MD.
+- Project Setup: Provided in SETUP.MD
