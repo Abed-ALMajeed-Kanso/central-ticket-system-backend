@@ -168,5 +168,6 @@ NEXT_PUBLIC_API_URL (make sure to add the url/api)
 NEXT_PUBLIC_WS_URL (make sure to add the url/ws)
 
 the app should be working perfectly
-
+the ideal case of the tunnel is to last 30 minutes to a few hours
+since no cloudflare account made, and no domain used
 
