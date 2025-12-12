@@ -65,3 +65,5 @@ ex:
   - email: admin@example.com
   - password: Password123@
   - rememberMe: true
+
+for deployment setup, check DEPLOYMENT_SETUP.MD in this repository
