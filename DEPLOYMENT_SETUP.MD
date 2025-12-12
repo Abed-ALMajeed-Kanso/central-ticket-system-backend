@@ -253,14 +253,4 @@ The tunnel will often last from ~30 minutes to a few hours when using an unauthe
 * If you see permission issues, confirm the EC2 user matches the AMI (e.g., `ec2-user`) or adjust accordingly.
 * Keep an eye on `backend.log` and `cloudflare.log` for startup errors and the tunnel URL.
 
----
-
-## Repository
-
-`https://github.com/Abed-ALMajeed-Kanso/central-ticket-system-backend`
-
----
-
-If you want this README saved to the repository directly (PR or commit), I can provide an edit-ready file content or a patch you can apply locally.
-
 
