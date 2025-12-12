@@ -1,18 +1,16 @@
 Follow the steps below to run the backend locally using IntelliJ IDEA and MySQL.
 
-Prerequisites
-
-  - Ensure the following are installed on your machine:
+Ensure the following are installed on your machine:
 
   - JDK 21 or later
 
-  - IntelliJ IDEA (Community or Ultimate)
+  - IntelliJ IDEA (Community or Ultimate), or STS
 
-  - MySQL Server
+  - MySQL Server, or Wampserver
 
   - Maven (optional, IntelliJ bundles it automatically)
 
-  - Database Setup (MySQL): Open your MySQL client (Workbench, CLI, TablePlus, etc.)
+Database Setup (MySQL): Open your MySQL client (Workbench, CLI, TablePlus, etc.)
 
 Create the database:
 
@@ -22,53 +20,21 @@ Make sure MySQL is running on port 3306.
 
 Project Installation:
 
-Clone the repository or download and extract the backend project.
+  - Clone the repository or download and extract the backend project.
 
-Open IntelliJ IDEA → Open → select your project folder.
+  - Open IntelliJ IDEA → Open → select your project folder.
 
-IntelliJ will automatically import Maven dependencies.
+  - Sync Maven dependencies (clcik M on the top right).
 
 Environment Variables / Properties
 
-For local development:
+  - Inside the project, locate: src/main/resources/example.application.properties
 
-Inside the project, locate:
+  - Make a copy and rename it to: application.properties
 
-src/main/resources/example.application.properties
+  - Fill in the required variables
 
-
-Make a copy and rename it to:
-
-application.properties
-
-
-Fill in the required variables:
-
-spring.application.name=TicketSystem
-
-spring.datasource.url=jdbc:mysql://localhost:3306/ticket_system
-spring.datasource.username=root
-spring.datasource.password=your_mysql_password
-
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
-spring.jpa.hibernate.ddl-auto=update
-
-app.jwt-secret=your_jwt_secret
-app.jwt-expiration=8640000
-app.refresh-short-expiration=604800
-app.refresh-long-expiration=2592000
-
-logging.level.org.springframework.security=DEBUG
-
-slack.webhook.url=
-
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_REGION=
-AWS_S3_BUCKET=
-
-spring.servlet.multipart.max-file-size=50MB
-spring.servlet.multipart.max-request-size=200MB
+  - You need to configure some of them from their sources (create your own S3 bucket, IAM user, and Slack app), or to make some changes in the application
 
 Notes:
 
@@ -82,28 +48,20 @@ Running the Backend
 
 Inside IntelliJ:
 
-Open the class containing
-public static void main(String[] args)
-(usually TicketSystemApplication.java)
+Open the TicketSystemApplication.java
 
 Click Run 
 
 Spring Boot will start on the default port 8080.
 
-Alternatively, from terminal inside the project:
-
-mvn spring-boot:run
-
-Verifying Local Setup
-
-Open browser or Postman:
+Verifying Local Setup, use Postman or OpenAPI:
 
 http://localhost:8080/api/auth/login
 
-use the emial, password feilds in the seeder config/seeders/roleseeder file
+use a emial, password record in the seeder config/seeders/roleseeder file
 
 ex:
 
-email: admin@example.com
-password: Password123@
-rememberMe: true
+  - email: admin@example.com
+  - password: Password123@
+  - rememberMe: true
