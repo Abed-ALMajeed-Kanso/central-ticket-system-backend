@@ -24,13 +24,6 @@ public class MessageController {
     private final SlackService slackService;
 
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
-    //@PostMapping("/{ticketId}/messages")
-    //public ResponseEntity<MessageSocketDto> addMessageToTicket(@PathVariable Long ticketId,
-    //        @RequestBody TicketMessageDto ticketMessageDto) {
-    //    MessageSocketDto responseDto = ticketMessageService.addTicketMessage(ticketMessageDto, ticketId);
-    //    return new ResponseEntity<>(responseDto, HttpStatus.CREATED);
-    //}
-
     @PostMapping(
             value = "/{ticketId}/messages",
             consumes = "multipart/form-data"

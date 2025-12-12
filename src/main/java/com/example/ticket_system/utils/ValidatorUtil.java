@@ -31,11 +31,17 @@ public class ValidatorUtil {
     }
 
     public static void validateNumber(String number, UserRepository userRepository) {
-        if(userRepository.existsByEmail(number))
+
+        String normalizedNumber = number.replaceAll("\\s+", "");
+
+        if (userRepository.existsByEmail(normalizedNumber)) {
             throw new ticket_systemAPIException(HttpStatus.BAD_REQUEST, "Number already exists!.");
+        }
 
         String numberRegex = "^\\+?[0-9]{10,15}$";
-        if (!number.matches(numberRegex))
+        if (!normalizedNumber.matches(numberRegex)) {
             throw new IllegalArgumentException("Invalid phone number format");
+        }
     }
+
 }
