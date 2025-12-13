@@ -1,69 +1,97 @@
-Follow the steps below to run the backend locally using IntelliJ IDEA and MySQL.
+# Running the Backend Locally (IntelliJ IDEA + MySQL)
+
+Follow the steps below to run the backend locally using **IntelliJ IDEA** and **MySQL**.
+
+---
+
+## Prerequisites
 
 Ensure the following are installed on your machine:
 
-  - JDK 21 or later
+* JDK 21 or later
+* IntelliJ IDEA (Community or Ultimate), or STS
+* MySQL Server, or Wampserver
+* Maven (optional, IntelliJ bundles it automatically)
 
-  - IntelliJ IDEA (Community or Ultimate), or STS
+---
 
-  - MySQL Server, or Wampserver
+## Database Setup (MySQL)
 
-  - Maven (optional, IntelliJ bundles it automatically)
-
-Database Setup (MySQL): Open your MySQL client (Workbench, CLI, TablePlus, etc.)
+Open your MySQL client (Workbench, CLI, TablePlus, etc.).
 
 Create the database:
 
+```
 CREATE DATABASE ticket_system;
+```
 
-Make sure MySQL is running on port 3306.
+Make sure MySQL is running on port **3306**.
 
-Project Installation:
+---
 
-  - Clone the repository or download and extract the backend project.
+## Project Installation
 
-  - Open IntelliJ IDEA → Open → select your project folder.
+* Clone the repository or download and extract the backend project.
+* Open IntelliJ IDEA → **Open** → select your project folder.
+* Sync Maven dependencies (**click M on the top right**).
 
-  - Sync Maven dependencies (clcik M on the top right).
+---
 
-Environment Variables / Properties
+## Environment Variables / Properties
 
-  - Inside the project, locate: src/main/resources/example.application.properties
+* Inside the project, locate:
 
-  - Make a copy and rename it to: application.properties
+```
+src/main/resources/example.application.properties
+```
 
-  - Fill in the required variables
+* Make a copy and rename it to:
 
-  - You need to configure some of them from their sources (create your own S3 bucket, IAM user, and Slack app), or to make some changes in the application
+```
+application.properties
+```
 
-Notes:
+* Fill in the required variables.
+* You need to configure some of them from their sources (create your own S3 bucket, IAM user, and Slack app), or to make some changes in the application.
 
-jwt-secret can be any long random string.
+---
 
-If you are not using AWS or Slack locally, leave those empty.
+## Notes
 
-Ensure your MySQL password matches your local installation.
+* `jwt-secret` can be any long random string.
+* If you are not using AWS or Slack locally, leave those empty.
+* Ensure your MySQL password matches your local installation.
 
-Running the Backend
+---
+
+## Running the Backend
 
 Inside IntelliJ:
 
-Open the TicketSystemApplication.java
+* Open `TicketSystemApplication.java`
+* Click **Run**
 
-Click Run 
+Spring Boot will start on the default port **8080**.
 
-Spring Boot will start on the default port 8080.
+---
 
-Verifying Local Setup, use Postman or OpenAPI:
+## Verifying Local Setup
 
+Use Postman or OpenAPI:
+
+```
 http://localhost:8080/api/auth/login
+```
 
-use a emial, password record in the seeder config/seeders/roleseeder file
+Use an email and password record in the seeder config `seeders/roleseeder` file.
 
-ex:
+Example:
 
-  - email: admin@example.com
-  - password: Password123@
-  - rememberMe: true
+* email: `admin@example.com`
+* password: `Password123@`
+* rememberMe: `true`
 
-for deployment setup, check DEPLOYMENT_SETUP.MD in this repository
+---
+
+For deployment setup, check **DEPLOYMENT_SETUP.MD** in this repository.
+
