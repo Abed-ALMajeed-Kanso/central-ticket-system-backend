@@ -1,6 +1,6 @@
 # Deploying Central Ticket System Backend on AWS EC2 (Red Hat) — Java 21 + Maven + RDS MySQL
 
-This README provides a clean, step‑by‑step guide for running the *central-ticket-system-backend* on an AWS **EC2** (Red Hat) instance using **Java 21**, **Maven**, and an **AWS RDS MySQL** database. The original commands and syntax have been preserved exactly; only organization, headings, and explanatory text were improved for clarity.
+This File provides a clean, step‑by‑step guide for running the *central-ticket-system-backend* on an AWS **EC2** (Red Hat) instance using **Java 21**, **Maven**, and an **AWS RDS MySQL** database. The original commands and syntax have been preserved exactly; only organization, headings, and explanatory text were improved for clarity.
 
 ---
 
@@ -248,7 +248,7 @@ The tunnel will often last from ~30 minutes to a few hours when using an unauthe
 
 ## Notes & Troubleshooting
 
-* Do **not** modify security groups if you followed the instructions to connect RDS directly to EC2 during setup. If you changed security groups, ensure the EC2 instance can communicate with RDS on the correct port (default: 3306).
+* Do **not** modify security groups if you followed the instructions to connect RDS directly to EC2 during setup. If you changed security groups, ensure the EC2 instance can communicate with RDS.
 * If you did not create the initial DB during RDS provisioning, install the MySQL client on the EC2 instance and create `central_ticket_system_database` manually.
 * If you see permission issues, confirm the EC2 user matches the AMI (e.g., `ec2-user`) or adjust accordingly.
 * Keep an eye on `backend.log` and `cloudflare.log` for startup errors and the tunnel URL.
