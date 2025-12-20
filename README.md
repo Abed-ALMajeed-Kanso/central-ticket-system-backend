@@ -2,7 +2,7 @@ Centralized Ticket System: Developed a centralized ticket system designed to int
 
 Key Features & Functionality:
 
-- Near-real-time ticket updates: Near-real-time behavior was implemented using WebSockets, with Slack integration handled via Webhooks for notifications. In real-world ticketing systems, near-real-time behavior is typically achieved using short polling or event-based refresh mechanisms, which are simpler, and more reliable. In this project, WebSockets were intentionally used for learning purposes to explore real-time communication patterns. They were applied as a UI enhancement layer, not as a core dependency, in the following areas:
+- Near-real-time ticket updates: Near-real-time behavior was implemented using WebSockets (STOMP over WebSocket with SockJS fallback), with Slack integration handled via Webhooks for notifications. In real-world ticketing systems, near-real-time behavior is typically achieved using short polling or event-based refresh mechanisms, which are simpler, and more reliable. In this project, WebSockets were intentionally used for learning purposes to explore real-time communication patterns. They were applied as a UI enhancement layer, not as a core dependency, in the following areas:
   
   - Broadcasting ticket creation events to update active dashboards
   - Broadcasting new ticket messages to viewers of the same ticket
